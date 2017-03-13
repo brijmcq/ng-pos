@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {TabsModule,ButtonsModule } from 'ng2-bootstrap';
 import { AppComponent } from './app.component';
+import {OrderService} from "./services/order.service";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AppComponent } from './app.component';
     TabsModule.forRoot(),
     ButtonsModule.forRoot()
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
