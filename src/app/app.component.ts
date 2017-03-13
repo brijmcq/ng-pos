@@ -21,11 +21,12 @@ export class AppComponent {
   }
 
   onAdd(key){
-    console.log('key : ', key);
+    this._orderService.AddOrder(key);
   }
 
   onMinus(key){
-    console.log('key : ', key);
+
+    this._orderService.MinusOrder(key);
   }
 
 

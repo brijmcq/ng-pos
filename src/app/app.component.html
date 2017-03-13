@@ -32,7 +32,7 @@
                  <span class="badge badge-left">{{item.qty}}</span>
                </td>
                 <td>
-                  <span class="label label-success">{{item.qty}}</span>
+                  <span class="label label-success">{{item.price}}</span>
                 </td>
                 <td>
                   <span class="label label-primary">{{item.qty *item.price}}</span>
@@ -48,6 +48,12 @@
                     <span class="glyphicon glyphicon-trash"></span>
                   </button>
                 </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td> <span class="label label-primary">{{_orderService.GetTotalOrderPrice()}}</span></td>
               </tr>
 
             </tbody>

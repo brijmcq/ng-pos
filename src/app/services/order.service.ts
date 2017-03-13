@@ -37,8 +37,20 @@ export class OrderService {
 
   AddOrder(id){
 
+   let resultOrder= this.orders.find( item =>
+      item.$key ===id
+    );
+
+   resultOrder.qty++;
+
   }
-  MinusOrder(){
+  MinusOrder(id){
+    let resultOrder= this.orders.find( item =>
+      item.$key ===id
+    );
+
+    resultOrder.qty--;
+
 
   }
   DeleteOder(){
@@ -50,7 +62,7 @@ export class OrderService {
     for(let i=0, n= this.orders.length; i < n; i++)
     {
       count += (this.orders[i].qty * this.orders[i].price);
-      console.log("the count is ", count);
+
     }
 
     return count;
