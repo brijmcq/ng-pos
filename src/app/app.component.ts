@@ -8,15 +8,27 @@ import {OrderService} from "./services/order.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(
-    private _orderService:OrderService
-  ){
-    this.orders = this._orderService.GetOrders();
-
-  }
   title = 'app works!';
   orders:IOrder[];
   currentDate:string = new Date().toLocaleDateString();
+
+  constructor(
+    private _orderService:OrderService
+  ) {
+    this.orders = this._orderService.GetOrders();
+
+    console.log("total", this._orderService.GetTotalOrderPrice());
+  }
+
+  onAdd(key){
+    console.log('key : ', key);
+  }
+
+  onMinus(key){
+    console.log('key : ', key);
+  }
+
+
 
 
 

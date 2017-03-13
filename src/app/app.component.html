@@ -38,10 +38,10 @@
                   <span class="label label-primary">{{item.qty *item.price}}</span>
                 </td>
                 <td>
-                  <button class="btn btn-success btn-xs">
+                  <button class="btn btn-success btn-xs" (click)="onAdd(item.$key)">
                     <span class="glyphicon glyphicon-plus"></span>
                   </button>
-                  <button class="btn btn-warning btn-xs">
+                  <button class="btn btn-warning btn-xs" (click)="onMinus(item.$key)">
                     <span class="glyphicon glyphicon-minus"></span>
                   </button>
                   <button class="btn btn-danger btn-xs">
@@ -62,31 +62,48 @@
     <div class="col-md-6">
       <tabset>
         <tab heading="Burgers">
-          <button type="button" class="btn btn-primary">
-          Cheese Burger
-          </button>
-          <button type="button" class="btn btn-primary">
-          Double Cheese Burger
-          </button>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <button type="button" class="btn btn-primary">
+                Cheese Burger
+              </button>
+              <button type="button" class="btn btn-primary">
+                Double Cheese Burger
+              </button>
+            </div>
+          </div>
+
         </tab>
         <tab heading="Chicken">
-          <button type="button" class="btn btn-primary">
-           1pc Chicken
-          </button>
-          <button type="button" class="btn btn-primary">
-          2pc Chicken
-          </button>
-          <button type="button" class="btn btn-primary">
-          1pc Chicken with Spaghetti
-          </button>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <button type="button" class="btn btn-primary">
+                1pc Chicken
+              </button>
+              <button type="button" class="btn btn-primary">
+                2pc Chicken
+              </button>
+              <button type="button" class="btn btn-primary">
+                1pc Chicken with Spaghetti
+              </button>
+            </div>
+          </div>
+
+
         </tab>
         <tab heading="Desserts">
-          <button type="button" class="btn btn-primary">
-            Chocolate Sundae
-          </button>
-          <button type="button" class="btn btn-primary">
-          Caramel Sundae
-          </button>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <button type="button" class="btn btn-primary">
+                Chocolate Sundae
+              </button>
+              <button type="button" class="btn btn-primary">
+                Caramel Sundae
+              </button>
+            </div>
+          </div>
+
+
         </tab>
       </tabset>
 
