@@ -1,3 +1,82 @@
-<h1>
-  {{title}}
-</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">simple POS</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <p>{{currentDate}}</p></div>
+        <div class="panel-body">
+
+          <table class="table table-hover">
+            <thead>
+              <td>Name</td>
+              <td>Quantity</td>
+              <td>Price</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chicken Joy</td>
+                <td>1</td>
+                <td>88</td>
+              </tr>
+              <tr>
+                <td>Burger Steak</td>
+                <td>1</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Chicken Mcdo</td>
+                <td>1</td>
+                <td>95</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-6">
+      <tabset>
+        <tab heading="Burgers">
+          <button type="button" class="btn btn-primary">
+          Cheese Burger
+          </button>
+          <button type="button" class="btn btn-primary">
+          Double Cheese Burger
+          </button>
+        </tab>
+        <tab heading="Chicken">
+          <button type="button" class="btn btn-primary">
+           1pc Chicken
+          </button>
+          <button type="button" class="btn btn-primary">
+          2pc Chicken
+          </button>
+          <button type="button" class="btn btn-primary">
+          1pc Chicken with Spaghetti
+          </button>
+        </tab>
+        <tab heading="Desserts">
+          <button type="button" class="btn btn-primary">
+            Chocolate Sundae
+          </button>
+          <button type="button" class="btn btn-primary">
+          Caramel Sundae
+          </button>
+        </tab>
+      </tabset>
+
+
+
+  </div>
+</div>
