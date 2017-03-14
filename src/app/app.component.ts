@@ -25,7 +25,6 @@ export class AppComponent {
   }
 
   onMinus(key){
-
     this._orderService.MinusOrder(key);
   }
 

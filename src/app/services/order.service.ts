@@ -48,14 +48,30 @@ export class OrderService {
     let resultOrder= this.orders.find( item =>
       item.$key ===id
     );
-
-    resultOrder.qty--;
-
+    if(resultOrder.qty>1){
+      resultOrder.qty--;
+    }
+    else if (resultOrder.qty===1){
+      this.DeleteOder(resultOrder.$key);
+    }
+    else{
+      console.log("warning: negative order");
+    }
 
   }
-  DeleteOder(){
+  DeleteOder(id){
+    let resultOrder = this.orders.find( item => item.$key===id);
+   let orderIndex = this.orders.indexOf(resultOrder);
+   if(orderIndex>-1){
+     this.orders.splice(orderIndex,1);
+   }
 
   }
+  GetOrderCount():number{
+    return this.orders.length;
+  }
+
+
 
   GetTotalOrderPrice(){
     let count = 0;

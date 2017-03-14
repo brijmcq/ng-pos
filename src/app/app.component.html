@@ -23,7 +23,8 @@
               <td></td>
             </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="_orderService.GetOrderCount()>0">
+
               <tr *ngFor ="let item of orders">
                <td>
                  {{item.name}}
@@ -58,6 +59,10 @@
 
             </tbody>
           </table>
+
+          <div class="container" *ngIf="_orderService.GetOrderCount()<1">
+            <h4>No order</h4>
+          </div>
 
         </div>
       </div>
