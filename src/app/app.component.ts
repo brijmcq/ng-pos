@@ -12,7 +12,10 @@ import {MenuService} from "./services/menu.service";
 export class AppComponent {
   title = 'app works!';
   orders:IOrder[];
-  menu:IMenu[];
+  chickenMenu:IMenu[];
+  burgerMenu:IMenu[];
+  dessertMenu:IMenu[];
+
   currentDate:string = new Date().toLocaleDateString();
 
   constructor(
@@ -20,7 +23,12 @@ export class AppComponent {
     private _menuService:MenuService
   ) {
     this.orders = this._orderService.GetOrders();
-    this.menu = this._menuService.GetMenu();
+    this.chickenMenu = this._menuService.GetMenu('chicken');
+    this.burgerMenu = this._menuService.GetMenu('burger');
+    this.dessertMenu = this._menuService.GetMenu('dessert');
+
+    console.log("burger menu", this.burgerMenu);
+
     console.log("total", this._orderService.GetTotalOrderPrice());
   }
 

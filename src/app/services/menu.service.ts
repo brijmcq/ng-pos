@@ -30,9 +30,13 @@ export class MenuService {
   constructor() {
   }
 
-  GetMenu():IMenu[]{
+  GetMenuAll():IMenu[]{
     return this.menu;
   }
+  GetMenu(category):IMenu[]{
+    return this.menu.filter(item => item.category===category);
+  }
+
   GetMenuCount():number{
     return this.menu.length;
   }
