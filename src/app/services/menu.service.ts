@@ -9,22 +9,23 @@ export class MenuService {
       '$key':'1',
       'name':'1 pc Chicken',
       'price':95,
+      'category':'chicken',
       'productCode':1
     },
     {
       '$key':'2',
       'name':'Cheese Burger',
       'price':89,
+      'category':'burger',
       'productCode':2
     },
     {
       '$key':'3',
       'name':'Chocolate Sundae',
       'price':20,
+      'category':'dessert',
       'productCode':3
     }
-
-
   ];
   constructor() {
   }

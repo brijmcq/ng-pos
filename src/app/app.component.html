@@ -75,12 +75,19 @@
         <tab heading="Burgers">
           <div class="panel panel-default">
             <div class="panel-body">
-              <button type="button" class="btn btn-primary">
-                Cheese Burger
-              </button>
-              <button type="button" class="btn btn-primary">
-                Double Cheese Burger
-              </button>
+              <div >
+                <div class="btn-group" *ngFor="let item of menu">
+                  <button style="margin: 10px;"  type="button" class="btn btn-primary"
+                  (click)="onAddToOrder(item.$key)"
+                  >
+                    {{item.name}}
+                  </button>
+                </div>
+
+
+
+              </div>
+
             </div>
           </div>
 

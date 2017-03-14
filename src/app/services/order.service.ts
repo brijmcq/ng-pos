@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {IOrder} from "../models/order.model";
+import {MenuService} from "./menu.service";
 
 @Injectable()
 export class OrderService {
@@ -28,7 +29,7 @@ export class OrderService {
 
 
   ];
-  constructor() {
+  constructor( private _menuService:MenuService) {
   }
 
   GetOrders():IOrder[]{
@@ -65,7 +66,6 @@ export class OrderService {
    if(orderIndex>-1){
      this.orders.splice(orderIndex,1);
    }
-
   }
   GetOrderCount():number{
     return this.orders.length;
@@ -73,16 +73,35 @@ export class OrderService {
 
   AddToOrder(key):void{
 
+    //check if it exists and increment by 1
+   let resultOrder =  this.orders.find( item => item.$key===key);
+    if(resultOrder){
+      this.AddOrder(key);
 
-      this.orders.push(
-        {
-          '$key':'1',
-          'name':'1 pc Chicken',
-          'price':95,
-          'qty':2,
-          'productCode':1
-        }
-      )
+    }
+    else{
+    let newOrder = this._menuService.GetMenuItem(key);
+    this.orders.push(
+      {
+        '$key':newOrder.$key,
+        'name':newOrder.name,
+        'price':newOrder.price,
+        'qty':1
+      }
+    );
+
+    }
+    //add if not yet in the current order
+    //
+    //   this.orders.push(
+    //     {
+    //       '$key':'1',
+    //       'name':'1 pc Chicken',
+    //       'price':95,
+    //       'qty':2,
+    //       'productCode':1
+    //     }
+    //   )
   }
 
 

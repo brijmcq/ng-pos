@@ -20,7 +20,7 @@ export class AppComponent {
     private _menuService:MenuService
   ) {
     this.orders = this._orderService.GetOrders();
-
+    this.menu = this._menuService.GetMenu();
     console.log("total", this._orderService.GetTotalOrderPrice());
   }
 
