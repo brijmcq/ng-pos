@@ -71,6 +71,20 @@ export class OrderService {
     return this.orders.length;
   }
 
+  AddToOrder(key):void{
+
+
+      this.orders.push(
+        {
+          '$key':'1',
+          'name':'1 pc Chicken',
+          'price':95,
+          'qty':2,
+          'productCode':1
+        }
+      )
+  }
+
 
 
   GetTotalOrderPrice(){
@@ -78,7 +92,6 @@ export class OrderService {
     for(let i=0, n= this.orders.length; i < n; i++)
     {
       count += (this.orders[i].qty * this.orders[i].price);
-
     }
 
     return count;

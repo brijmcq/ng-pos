@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import {TabsModule,ButtonsModule } from 'ng2-bootstrap';
 import { AppComponent } from './app.component';
 import {OrderService} from "./services/order.service";
+import {MenuService} from "./services/menu.service";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {OrderService} from "./services/order.service";
     TabsModule.forRoot(),
     ButtonsModule.forRoot()
   ],
-  providers: [OrderService],
+  providers: [OrderService,
+  MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
