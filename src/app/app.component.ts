@@ -45,8 +45,11 @@ export class AppComponent {
   }
 
   onCheckout(){
-    this._orderService.ClearOrder();
-   return alert("Total Price : " + this._orderService.GetTotalOrderPrice()+"\nThank You!");
+    let totalPrice =  this._orderService.GetTotalOrderPrice();
+      this._orderService.ClearOrder();
+    return alert("Total Price : " + totalPrice +"\nThank You!");
+
+
   }
 
   onMinus(key){
