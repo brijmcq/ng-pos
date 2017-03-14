@@ -56,6 +56,10 @@
                 <td></td>
                 <td> <span class="label label-primary">{{_orderService.GetTotalOrderPrice()}}</span></td>
               </tr>
+            <tr>
+              <button class="btn btn-danger" (click)="onClearOrders()">Clear Orders</button> |
+              <button class="btn btn-primary" (click)="onCheckout()">Checkout</button>
+            </tr>
 
             </tbody>
           </table>
@@ -75,7 +79,6 @@
         <tab heading="Burgers">
           <div class="panel panel-default">
             <div class="panel-body">
-              <div >
                 <div class="btn-group" *ngFor="let item of burgerMenu">
                   <button style="margin: 10px;"  type="button" class="btn btn-primary"
                   (click)="onAddToOrder(item.$key)"
@@ -83,11 +86,6 @@
                     {{item.name}}
                   </button>
                 </div>
-
-
-
-              </div>
-
             </div>
           </div>
 
@@ -95,15 +93,13 @@
         <tab heading="Chicken">
           <div class="panel panel-default">
             <div class="panel-body">
-              <button type="button" class="btn btn-primary">
-                1pc Chicken
-              </button>
-              <button type="button" class="btn btn-primary">
-                2pc Chicken
-              </button>
-              <button type="button" class="btn btn-primary">
-                1pc Chicken with Spaghetti
-              </button>
+              <div class="btn-group" *ngFor="let item of chickenMenu">
+                <button style="margin: 10px;"  type="button" class="btn btn-primary"
+                        (click)="onAddToOrder(item.$key)"
+                >
+                  {{item.name}}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -112,12 +108,13 @@
         <tab heading="Desserts">
           <div class="panel panel-default">
             <div class="panel-body">
-              <button type="button" class="btn btn-primary">
-                Chocolate Sundae
-              </button>
-              <button type="button" class="btn btn-primary">
-                Caramel Sundae
-              </button>
+              <div class="btn-group" *ngFor="let item of dessertMenu">
+                <button style="margin: 10px;"  type="button" class="btn btn-primary"
+                        (click)="onAddToOrder(item.$key)"
+                >
+                  {{item.name}}
+                </button>
+              </div>
             </div>
           </div>
 

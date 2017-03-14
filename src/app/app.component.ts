@@ -39,6 +39,15 @@ export class AppComponent {
     console.log(key);
     this._orderService.AddToOrder(key);
   }
+  onClearOrders()
+  {
+    this._orderService.ClearOrder();
+  }
+
+  onCheckout(){
+    this._orderService.ClearOrder();
+   return alert("Total Price : " + this._orderService.GetTotalOrderPrice()+"\nThank You!");
+  }
 
   onMinus(key){
     this._orderService.MinusOrder(key);

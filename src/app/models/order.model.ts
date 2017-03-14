@@ -3,6 +3,5 @@ export interface IOrder{
   name:string,
   price:number,
   qty:number,
-  productCode?:number,
   imageUrl?:string
 }

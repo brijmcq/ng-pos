@@ -4,27 +4,28 @@ import {MenuService} from "./menu.service";
 
 @Injectable()
 export class OrderService {
+
+  //dummy data
   orders:IOrder[]=[
     {
       '$key':'1',
       'name':'1 pc Chicken',
       'price':95,
       'qty':2,
-      'productCode':1
     },
     {
       '$key':'2',
       'name':'Cheese Burger',
       'price':89,
       'qty':1,
-      'productCode':2
+
     },
     {
       '$key':'3',
       'name':'Chocolate Sundae',
       'price':20,
       'qty':1,
-      'productCode':3
+
     }
 
 
@@ -44,6 +45,10 @@ export class OrderService {
 
    resultOrder.qty++;
 
+  }
+
+  ClearOrder(){
+    this.orders.length=0;
   }
   MinusOrder(id){
     let resultOrder= this.orders.find( item =>

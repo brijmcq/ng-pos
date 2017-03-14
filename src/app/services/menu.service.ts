@@ -25,6 +25,27 @@ export class MenuService {
       'price':20,
       'category':'dessert',
       'productCode':3
+    },
+    {
+      '$key':'4',
+      'name':'1 pc Chicken with Spaghetti',
+      'price':120,
+      'category':'chicken',
+      'productCode':1
+    },
+    {
+      '$key':'5',
+      'name':'2 pc Chicken',
+      'price':135,
+      'category':'chicken',
+      'productCode':1
+    },
+    {
+      '$key':'6',
+      'name':'Caramel Sundae',
+      'price':20,
+      'category':'dessert',
+      'productCode':3
     }
   ];
   constructor() {
