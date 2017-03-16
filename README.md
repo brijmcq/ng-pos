@@ -1,6 +1,6 @@
 # NgPos
 
-This is a simple POS project made in Angular.
+This is a simple POS ( Point of Sale ) project made in Angular.
 
 
 Live Demo [here](https://ng-pos.firebaseapp.com/).
